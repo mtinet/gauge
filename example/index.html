@@ -46,7 +46,7 @@
 
       .btn {
         background-color: "#2f434e";
-        filter: brightness(50%);
+        filter: brightness(30%);
       }
 
       .btn:hover {
@@ -87,19 +87,19 @@
       <h2>측정정보</h2>
 
       <div class="display">
-        <div id="gauge1" class="gauge-container three" style="float: left; width: 200px;">
+        <div id="gauge1" class="gauge-container three" style="float: left; width: 200px; height: 100%">
           조도(%)
         </div>
 
-        <div id="gauge2" class="gauge-container three" style="float: left; width: 200px;">
+        <div id="gauge2" class="gauge-container three" style="float: left; width: 200px; height: 100%">
           온도(℃)
         </div>
 
-        <div id="gauge3" class="gauge-container three" style="float: left; width: 200px;">
+        <div id="gauge3" class="gauge-container three" style="float: left; width: 200px; height: 100%">
           습도(%)
         </div>
 
-        <div id="gauge4" class="gauge-container three" style="width: 200px;">
+        <div id="gauge4" class="gauge-container three" style="width: 200px; height: 100%">
           아무거나
         </div>
       </div>
@@ -109,9 +109,11 @@
         <h2>제어버튼</h2>
         <span class="btn" style="float: left; width: 200px;">
           <input type="image" src="sun.png" name="sunButton" width="200px">
+          LED 제어
         </span>
         <span class="btn" style="float: left; width: 200px;">
           <input type="image" src="wind.png" name="windButton" width="200px">
+          팬 제어
         </span>
       </div>
 
