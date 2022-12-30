@@ -87,30 +87,40 @@
       <h2>측정정보</h2>
 
       <div class="display">
-        <div id="gauge1" class="gauge-container three" style="float: left; width: 28%; height: 100%">
-          조도(%)
-        </div>
+        <center>
+          <div id="gauge1" class="gauge-container three" style="float: left; width: 30%; height: 100%">
+            조도(%)
+          </div>
+        </center>
 
-        <div id="gauge2" class="gauge-container three" style="float: left; width: 28%; height: 100%">
-          온도(℃)
-        </div>
+          <center>
+          <div id="gauge2" class="gauge-container three" style="float: left; width: 30%; height: 100%">
+            온도(℃)
+          </div>
+        </center>
 
-        <div id="gauge3" class="gauge-container three" style="width: 28%; height: 100%">
-          습도(%)
-        </div>
+          <center>
+          <div id="gauge3" class="gauge-container three" style="width: 30%; height: 100%">
+            습도(%)
+          </div>
+        </center>
       </div>
       <div style="width:300px; height:100px; display:inline-block;">
       </div>
       <div>
         <h2>제어버튼</h2>
-        <span class="btn" style="float: left; width: 30%; height: 100%" >
-          <input type="image" src="sun.png" name="sunButton" width="100%">
-          LED 제어
-        </span>
-        <span class="btn" style="float: left; width: 30%; height: 100%">
-          <input type="image" src="wind.png" name="windButton" width="100%">
-          팬 제어
-        </span>
+        <div class="btn" style="float: left; width: 49%; height: 100%" >
+          <center>
+            <input type="image" src="sun.png" name="sunButton" width="50%"><br>
+            LED 제어
+          </center>
+        </div>
+        <div class="btn" style="float: left; width: 49%; height: 100%">
+          <center>
+            <input type="image" src="wind.png" name="windButton" width="50%" ><br>
+            팬 제어
+          </center>
+        </div>
       </div>
 
     <script type="text/javascript" src="../src/gauge.js"> </script>
