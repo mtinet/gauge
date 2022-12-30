@@ -87,32 +87,28 @@
       <h2>측정정보</h2>
 
       <div class="display">
-        <div id="gauge1" class="gauge-container three" style="float: left; width: 45%; height: 100%">
+        <div id="gauge1" class="gauge-container three" style="float: left; width: 30%; height: 100%">
           조도(%)
         </div>
 
-        <div id="gauge2" class="gauge-container three" style="width: 45%; height: 100%">
+        <div id="gauge2" class="gauge-container three" style="float: left; width: 30%; height: 100%">
           온도(℃)
         </div>
 
-        <div id="gauge3" class="gauge-container three" style="float: left; width: 45%; height: 100%">
+        <div id="gauge3" class="gauge-container three" style="width: 30%; height: 100%">
           습도(%)
-        </div>
-
-        <div id="gauge4" class="gauge-container three" style="width: 45%; height: 100%">
-          아무거나
         </div>
       </div>
       <div style="width:300px; height:100px; display:inline-block;">
       </div>
       <div>
         <h2>제어버튼</h2>
-        <span class="btn" style="float: left; width: 45%; height: 100%">
-          <input type="image" src="sun.png" name="sunButton" width="200px">
+        <span class="btn" style="float: left; width: 30%; height: 100%" >
+          <input type="image" src="sun.png" name="sunButton" width="100%">
           LED 제어
         </span>
-        <span class="btn" style="float: left; width: 45%; height: 100%">
-          <input type="image" src="wind.png" name="windButton" width="200px">
+        <span class="btn" style="float: left; width: 30%; height: 100%">
+          <input type="image" src="wind.png" name="windButton" width="100%">
           팬 제어
         </span>
       </div>
@@ -175,35 +171,15 @@
           }
         }
       );
-      var gauge4 = Gauge(
-        document.getElementById("gauge4"),
-        {
-          max: 100,
-          value: 50,
-          color: function(value) {
-            if(value < 20) {
-              return "#5ee432";
-            }else if(value < 40) {
-              return "#fffa50";
-            }else if(value < 60) {
-              return "#f7aa38";
-            }else {
-              return "#ef4655";
-            }
-          }
-        }
-      );
 
       (function loop() {
         var value1 = Math.random() * 100,
             value2 = Math.random() * 100,
-            value3 = Math.random() * 100,
-            value4 = Math.random() * 100;
+            value3 = Math.random() * 100;
 
         gauge1.setValueAnimated(value1, 1.5);
         gauge2.setValueAnimated(value2, 1.5);
         gauge3.setValueAnimated(value3, 1.5);
-        gauge4.setValueAnimated(value4, 1.5);
 
         window.setTimeout(loop, 3000);
       })();
