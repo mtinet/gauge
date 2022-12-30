@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="480" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#2f434e" />
@@ -74,15 +73,15 @@
 
       <div class="display">
         <div id="gauge1" class="gauge-container three" style="float: left; width: 200px;">
-          조도
+          조도(%)
         </div>
 
         <div id="gauge2" class="gauge-container three" style="float: left; width: 200px;">
-          온도
+          온도(℃)
         </div>
 
         <div id="gauge3" class="gauge-container three" style="float: left; width: 200px;">
-          습도
+          습도(%)
         </div>
 
         <div id="gauge4" class="gauge-container three" style="float: left; width: 200px;">
@@ -114,14 +113,14 @@
       var gauge2 = Gauge(
         document.getElementById("gauge2"),
         {
-          max: 100,
-          value: 50,
+          max: 50,
+          value: 25,
           color: function(value) {
-            if(value < 20) {
+            if(value < 10) {
               return "#5ee432";
-            }else if(value < 40) {
+            }else if(value < 20) {
               return "#fffa50";
-            }else if(value < 60) {
+            }else if(value < 30) {
               return "#f7aa38";
             }else {
               return "#ef4655";
@@ -177,7 +176,7 @@
         gauge3.setValueAnimated(value3, 1.5);
         gauge4.setValueAnimated(value4, 1.5);
 
-        window.setTimeout(loop, 4000);
+        window.setTimeout(loop, 3000);
       })();
     </script>
   </body>
