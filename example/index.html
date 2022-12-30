@@ -73,11 +73,62 @@
       <h2>스마트팜</h2>
 
       <div class="display">
-        <div id="gauge3" class="gauge-container three"></div>
+        <div id="gauge1" class="gauge-container three" style="float: left; width: 200px;">
+          조도
+        </div>
+
+        <div id="gauge2" class="gauge-container three" style="float: left; width: 200px;">
+          온도
+        </div>
+
+        <div id="gauge3" class="gauge-container three" style="float: left; width: 200px;">
+          습도
+        </div>
+
+        <div id="gauge4" class="gauge-container three" style="float: left; width: 200px;">
+          아무거나
+        </div>
+
       </div>
 
     <script type="text/javascript" src="../src/gauge.js"> </script>
     <script>
+      var gauge1 = Gauge(
+        document.getElementById("gauge1"),
+        {
+          max: 100,
+          value: 50,
+          color: function(value) {
+            if(value < 20) {
+              return "#5ee432";
+            }else if(value < 40) {
+              return "#fffa50";
+            }else if(value < 60) {
+              return "#f7aa38";
+            }else {
+              return "#ef4655";
+            }
+          }
+        }
+      );
+      var gauge2 = Gauge(
+        document.getElementById("gauge2"),
+        {
+          max: 100,
+          value: 50,
+          color: function(value) {
+            if(value < 20) {
+              return "#5ee432";
+            }else if(value < 40) {
+              return "#fffa50";
+            }else if(value < 60) {
+              return "#f7aa38";
+            }else {
+              return "#ef4655";
+            }
+          }
+        }
+      );
       var gauge3 = Gauge(
         document.getElementById("gauge3"),
 		    {
@@ -96,11 +147,36 @@
           }
         }
       );
+      var gauge4 = Gauge(
+        document.getElementById("gauge4"),
+        {
+          max: 100,
+          value: 50,
+          color: function(value) {
+            if(value < 20) {
+              return "#5ee432";
+            }else if(value < 40) {
+              return "#fffa50";
+            }else if(value < 60) {
+              return "#f7aa38";
+            }else {
+              return "#ef4655";
+            }
+          }
+        }
+      );
 
       (function loop() {
-        var value3 = Math.random() * 100;
+        var value1 = Math.random() * 100,
+            value2 = Math.random() * 100,
+            value3 = Math.random() * 100,
+            value4 = Math.random() * 100;
 
-        gauge3.setValueAnimated(value3, 0.5);
+        gauge1.setValueAnimated(value1, 1.5);
+        gauge2.setValueAnimated(value2, 1.5);
+        gauge3.setValueAnimated(value3, 1.5);
+        gauge4.setValueAnimated(value4, 1.5);
+
         window.setTimeout(loop, 4000);
       })();
     </script>
