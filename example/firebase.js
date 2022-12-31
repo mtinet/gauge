@@ -51,13 +51,17 @@ function gotData(data) {
     // 토글 할 버튼 선택 (fanButton)
     const ledButton = document.getElementById('ledButton');
     ledButton.style.filter = "brightness(50%)";
+  } else {
+    ledButton.style.filter = "brightness(100%)";
   }
+
   if (fanStatus == false) {
     // 토글 할 버튼 선택 (fanButton)
     const fanButton = document.getElementById('fanButton');
     fanButton.style.filter = "brightness(50%)";
+  }else {
+    fanButton.style.filter = "brightness(100%)";
   }
-
 }
 
 function errData(err) {
