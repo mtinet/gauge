@@ -28,21 +28,6 @@ pre {
   margin: 0;
 }
 
-.btn {
-  background-color: "#2f434e";
-  filter: brightness(30%);
-}
-
-.btn:hover {
-  filter: brightness(100%);
-}
-
-.btn:active {
-  filter: invert(70%);
-}
-
-
-
 @media only screen and (min-device-width: 768px) {
   .gauge-container {
     width: 200px;

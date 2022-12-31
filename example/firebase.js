@@ -35,6 +35,8 @@ function gotData(data) {
   //console.log(val.humi)
   //console.log(val.temp)
   //console.log(val.light)
+  //console.log(ledStatus)
+  //console.log(fanStatus)
 
   for (var i = 0; i < keys.length; i++) {
     var k = keys[i];
@@ -43,6 +45,19 @@ function gotData(data) {
     //console.log(v);
     console.log(k + ":" + v);
   }
+
+  // 버튼 상태 싱크
+  if (ledStatus == false) {
+    // 토글 할 버튼 선택 (fanButton)
+    const ledButton = document.getElementById('ledButton');
+    ledButton.style.filter = "brightness(50%)";
+  }
+  if (fanStatus == false) {
+    // 토글 할 버튼 선택 (fanButton)
+    const fanButton = document.getElementById('fanButton');
+    fanButton.style.filter = "brightness(50%)";
+  }
+
 }
 
 function errData(err) {
@@ -58,6 +73,11 @@ function ledOnOff() {
     ref.update({
       led: 1
     })
+
+    // 토글 할 버튼 선택 (sunButton)
+    const ledButton = document.getElementById('ledButton');
+    ledButton.style.filter = "brightness(100%)";
+
   } else {
     ledStatus = false;
 
@@ -65,6 +85,10 @@ function ledOnOff() {
     ref.update({
       led: 0
     })
+
+    // 토글 할 버튼 선택 (sunButton)
+    const ledButton = document.getElementById('ledButton');
+    ledButton.style.filter = "brightness(50%)";
   }
   //console.log(ledStatus);
 }
@@ -77,6 +101,11 @@ function fanOnOff() {
     ref.update({
       fan: 1
     })
+
+    // 토글 할 버튼 선택 (fanButton)
+    const fanButton = document.getElementById('fanButton');
+    fanButton.style.filter = "brightness(100%)";
+
   } else {
     fanStatus = false;
 
@@ -84,6 +113,10 @@ function fanOnOff() {
     ref.update({
       fan: 0
     })
+
+    // 토글 할 버튼 선택 (fanButton)
+    const fanButton = document.getElementById('fanButton');
+    fanButton.style.filter = "brightness(50%)";
   }
   //console.log(fanStatus);
 }
